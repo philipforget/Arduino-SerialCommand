@@ -1,7 +1,8 @@
 #include "SerialCommand.h"
 
-SerialCommand::SerialCommand(SoftwareSerial sSerial)
-  : commandList(NULL),
+SerialCommand::SerialCommand(SoftwareSerial* sSerial)
+  : sSerial (*sSerial),
+    commandList(NULL),
     commandCount(0),
     defaultHandler(NULL),
     term('\n'),  // default terminator for commands
